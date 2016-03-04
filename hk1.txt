@@ -1,0 +1,24 @@
+标题 	第一次实验提交
+正文 	请大家参考
+https://github.com/chyyuu/ucore_os_docs/
+对lab1和lab2的实验目标，
+在v9-cpu上完成 lab1和lab2的实验要求。
+即实现 lab1.c (支持时钟，中断，输出) lab2.c （支持建立页表）
+
+完成lab1.md, lab2.md，描述lab1.c和lab2.c的设计实现过程。
+
+要求在下次上课（3月8日）前把你完成作业（放在github上）的链接提交给“课程作业”处  
+
+git 下载
+https://github.com/chyyuu/ucore_os_lab
+https://github.com/chyyuu/v9-cpu
+
+尝试编译，运行这两个git repo中的软件
+
+下载并阅读理解ucore os labs doc，了解实验的目的
+https://github.com/chyyuu/ucore_os_docs/
+
+下载并阅读理解 v9-cpu的文档，掌握v9-cpu的设计实现
+https://github.com/chyyuu/v9-cpu/blob/master/doc/cpu.md
+
+请带上笔记本电脑上课，能够在笔记本电脑上完成上述事情。
