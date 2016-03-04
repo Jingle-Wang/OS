@@ -52,15 +52,15 @@ trap()
 
 alltraps()
 {
-  asm(PSHA);
-  asm(PSHB);
-  asm(PSHC);
+  asm(PSHA);  // sp -= 8; *sp = a;
+  asm(PSHB);  // sp -= 8; *sp = b;
+  asm(PSHC);  // sp -= 8; *sp = c;
 
   trap();
-    
-  asm(POPC);
-  asm(POPB);
-  asm(POPA);
+
+  asm(POPC);  // c = *sp; sp += 8
+  asm(POPB);  // b = *sp; sp += 8
+  asm(POPA);  // a = *sp; sp += 8;
   asm(RTI);
 }
 
@@ -78,19 +78,19 @@ main()
 
   stmr(5000);
   ivec(alltraps);
-  
+
   task1_sp = &task1_stack;
   task1_sp += 50;
-  
-  
+
+
   task1_sp -= 2; *task1_sp = &task1;
   task1_sp -= 2; *task1_sp = 0; // fault code
-  task1_sp -= 2; *task1_sp = 0; // a  
-  task1_sp -= 2; *task1_sp = 0; // b  
-  task1_sp -= 2; *task1_sp = 0; // c  
-  task1_sp -= 2; *task1_sp = &trapret;  
-  
+  task1_sp -= 2; *task1_sp = 0; // a
+  task1_sp -= 2; *task1_sp = 0; // b
+  task1_sp -= 2; *task1_sp = 0; // c
+  task1_sp -= 2; *task1_sp = &trapret;
+
   asm(STI);
-  
+
   task0();
 }
